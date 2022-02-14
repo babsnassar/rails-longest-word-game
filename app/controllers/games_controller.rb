@@ -13,7 +13,9 @@ class GamesController < ApplicationController
     user_serialized = URI.open(url).read
     @dictionary = JSON.parse(user_serialized)
 
-    params[:letters]
+    # @letters = params[:letters].split('')
+    # @word.split('').each do | letter |
+    #   letters.pop(letter) if @letters.include?(letter)
 
     @score = 0
     @score += @word.size if @dictionary['found']
