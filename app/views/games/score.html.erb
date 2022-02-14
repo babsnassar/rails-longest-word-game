@@ -1,0 +1,14 @@
+<h1>Result</h1>
+
+<% if @dictionary["found"] %>
+  <p><strong>Congratulations!</strong> <%= @dictionary["word"].upcase %> is a valid English word!</p>
+  <ul>
+    <li>Points: <%= @score%></li>
+    <li>Total score:<%= session[:total_score] %></li>
+  </ul>
+
+<% else %>
+  <p>Sorry, but <%= @dictionary["word"].upcase %> does not seem to be a valid English word!</p>
+<% end %>
+
+<%= link_to "Play again", new_path %>
